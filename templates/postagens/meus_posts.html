@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <header class="container">
+
+        <div>
+            <img class="logo" src="{% static 'img/chave-do-hotel.png' %}">
+        </div>
+
+        <nav class="menu container">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'cria_post' %}">Criar Post</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>				
+            </ul>
+        </nav>
+        
+        <div class="clear"></div>
+
+    </header>
+
+    <section class="bg">
+
+        <div class="welcome_block">
+            <h2>Bem vindo {{ user.username }}! </h2>
+            {% if postagens %}
+                <h2>Suas Postagens mais recentes: </h2>
+            {% endif %}
+        </div>
+        {% if postagens %}
+        {% for postagem in postagens %}
+        <div class="container postagem">
+            <div class="dados_postagem">
+            <h2 name="titulo">{{ postagem.titulo }}</h2>
+
+            <p name="comentario">{{ postagem.comentario }}</p>
+            
+            {% if not postagem.foto %}
+                <img name="foto_post" class="foto_menu" src="{% static 'img/viajante-com-uma-mala.png' %}" alt="">
+            {% else %}
+                <img name="foto_post" class="foto_menu" src="{{ postagem.foto.url }}" alt="">
+            {% endif %}
+
+            <p name="nota">Nota: {{ postagem.nota }}</p>
+            <p name="user">Postado por: {{ postagem.pessoa }}</p>
+            <p name="data_post">{{ postagem.date_post }}</p>
+            </div>
+
+            <div class="delete_button">
+                <a href="{% url 'deleta_post' postagem.id %}" type="button" class="btn btn-danger">Deletar</a>
+            </div>
+        </div>
+        
+        {% endfor %}
+        {% else %}
+        <h2 class="welcome_block">Nenhum post encontrado.</h2>
+        {% endif %}
+            
+        <div class="clear"></div>
+    </section>
+
+    
+{% endblock %}

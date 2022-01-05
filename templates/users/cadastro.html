@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body>
+
+    <header class="container">
+
+        <div>
+            <img class="logo" src="{% static 'img/chave-do-hotel.png' %}">
+        </div>
+
+        <nav class="menu container">
+            <ul>
+                <li><a href="{% url 'login' %}">Faça seu login</a></li>			
+            </ul>
+        </nav>
+        
+        <div class="clear"></div>
+
+    </header>
+    
+    {% include 'partials/_alertas.html' %}
+
+    <section class="bg">
+
+        <div class="form_container container">
+
+            <h2>Cadastre-se</h2>
+
+            <form action="{% url 'cadastro' %}" method="post">
+                {% csrf_token %}
+                <div class="input_single">
+                    <p>*E-mail:</p>
+                    <input type="text" name="email" required>
+                </div>
+
+                <div class="input_single">
+                    <p>*Usename:</p>					
+                    <input type="text" name="username" required>
+                </div>
+
+                <div class="input_single">
+                    <p>*Senha:</p>					
+                    <input type="password" name="senha" required>
+                </div>
+
+                <div class="input_single">
+                    <p>*Confirmação de senha:</p>					
+                    <input type="password" name="senha2" required>
+                </div>
+
+                <div class="input_single">
+                    <input type="submit" value="Cadastrar">
+                </div>
+
+                <div class="input_single">
+                    <p>*Campos Obrigatorios</p>
+                </div>
+
+                <div class="clear"></div>
+
+            </form>
+
+        </div>
+            
+    </section>
+
+{% endblock %}

@@ -1,0 +1,165 @@
+@import url(bootstrap.min.css);
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+html, body{
+	height: 100%;
+	background: rgb(238,174,202);
+	background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	background-size: 100%;
+}
+
+.container{
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.clear{
+	clear: both;
+}
+
+header .logo{
+	float: left;
+	height: 60px;
+}
+
+header{
+    padding: 20px 30px;
+}
+
+.menu ul{
+	list-style-type: none;
+    margin-top: 10px;
+	float: right
+}
+
+.menu li{
+	display: inline-block;
+	margin: 0 20px;
+}
+
+.menu a{
+	color: black;
+	text-decoration: none;
+    font-size: 30px;
+}
+
+.bg{
+	background-size: cover;
+	background-position: center;
+    min-width: 100%;
+    min-height: 100%;
+    display: inline-block;
+}
+
+.postagem{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 60%;
+    background-color: rgb(234, 236, 239, 0.8);
+    border-radius: 10px;
+}
+
+.dados_postagem{
+    padding: 2%;
+}
+
+.welcome_block{
+	text-align: center;
+}
+
+.delete_button{
+	margin-bottom: 5px;
+}
+
+.form_container{
+    padding: 5% 2%;
+    width: 35%;
+    border-radius: 5px;
+}
+
+.post_container{
+    padding: 10% 2%;
+    width: 70%;
+    border-radius: 50px;
+}
+
+.form_container h2{
+	font-weight: normal;
+	background-color: rgba(148,187,233,1);
+	padding: 20px;
+	color: black;
+	font-size: 18px;
+	margin-bottom: 0;
+	border-radius: 5px;
+}
+
+.form_container form{
+	padding: 15px;
+	border-radius: 5px;
+	background-color: rgb(234, 236, 239, 0.8);
+}
+
+.input_single:not(:first-child){
+	margin-top: 25px;
+}
+
+.form_container p{
+	font-size: 13px;
+	color: black;
+}
+
+.form_container form input[type=text]{
+	width: 100%;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+	height: 30px;
+	line-height: 30px;
+}
+
+.form_container form input[type=number]{
+	width: 5%;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+	height: 30px;
+	line-height: 30px;
+}
+
+.form_container form input[type=password]{
+	width: 100%;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+	height: 30px;
+	line-height: 30px;
+}
+
+.form_container form input[type=submit]{
+	background-color: rgba(148,187,233,1);
+	text-transform: uppercase;
+	color: white;
+	width: 100%;
+	height: 50px;
+	cursor: pointer;
+	font-size: 25px;
+	border: none;
+}
+
+.input_single_paragrafo {
+	width: 100%;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+	height: 100px;
+	resize: none;
+}
+
+.foto_menu{
+	display: block;
+	margin: 1% auto;
+	min-width: 30%;
+	max-width: 30%;
+}

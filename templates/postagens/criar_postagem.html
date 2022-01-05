@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <header class="container">
+
+        <div>
+            <img class="logo" src="{% static 'img/chave-do-hotel.png' %}">
+        </div>
+
+        <nav class="menu container">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'meus_posts' %}">Meus Posts</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>				
+            </ul>
+        </nav>
+        
+        <div class="clear"></div>
+
+    </header>
+
+    {% include 'partials/_alertas.html' %}
+
+    <section class="bg">
+
+        <div class="post_container form_container container">
+
+            <h2>Crie seu post</h2>
+
+            <form <form action="{% url 'cria_post' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="input_single">
+                    <p>*Nome do hotel:</p>
+                    <input type="text" name="titulo" required>
+                </div>
+
+                <div class="input_single">
+                    <p>Comentario:</p>					
+                    <textarea name="comentario" cols="30" rows="10" placeholder="cometario" class="input_single_paragrafo" required></textarea>
+                </div>
+
+                <div class="input_single">
+                    <p>Selecione uma foto:</p>
+                    <input id="foto" type="file" name="foto" required>
+                </div>
+
+                <div class="input_single">
+                    <p>Nota:</p>
+                    <input type="number" name="nota" required>
+                </div>
+
+                <div class="input_single">
+                    <input type="submit" value="Postar">
+                </div>
+
+                <div class="input_single">
+                    <p>*Campos Obrigatorios</p>
+                </div>
+
+                <div class="clear"></div>
+
+            </form>
+
+        </div>
+            
+    </section>
+
+{% endblock %}
